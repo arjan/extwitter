@@ -23,7 +23,7 @@ defmodule ExTwitter.API.Base do
 
   def verify_params(params), do: params
 
-  defp request_url(path) do
+  def request_url(path) do
     "https://api.twitter.com/#{path}" |> to_char_list
   end
 
