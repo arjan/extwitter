@@ -8,7 +8,7 @@ defmodule ExTwitter.API.Users do
   def me(options \\ []) when is_list(options) do
     params = ExTwitter.Parser.parse_request_params(options)
     request(:get, "1.1/account/verify_credentials.json", params)
-      |> Enum.map(&ExTwitter.Parser.parse_user/1)
+      |> ExTwitter.Parser.parse_user
   end
 
   def user_lookup(options) when is_list(options) do
